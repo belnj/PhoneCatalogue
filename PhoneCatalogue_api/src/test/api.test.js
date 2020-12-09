@@ -96,6 +96,7 @@ describe('api-test', () => {
     });
 
     //create a phone
+    /*
     describe('POST /phones', function() {
         it('responds with json', function(done) {
         request(app)
@@ -108,7 +109,7 @@ describe('api-test', () => {
             done();
             });
         });
-    });
+    });*/
 
     //GET BY ID
 
