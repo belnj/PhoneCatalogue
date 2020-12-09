@@ -23,15 +23,15 @@ Copy the .env file that I send inside PhoneCatalogue_api. Make sure that when yo
 
 option a. If you have docker installed follow these steps
 Create docker image `docker build -t <your username>/phonecatalogue-api .`
-Run the image `docker run -p 4001:4001 -d <your username>/phonecatalogue-api`
+then run the image `docker run -p 4001:4001 -d <your username>/phonecatalogue-api`
 
 option b. If you haven't docker installed follow these steps
 Open a terminal in PhoneCatalogue_api folder and type `npm install`
-run `npm start`
+then run with `npm start`
 
 REACT app installation.
 Open a terminal in PhoneCatalogue_app folder and type `npm install`
-run `npm start`
+then run with `npm start`
 
 ### How it was done
 The minimum requirements of the app are a REST API th an endpoint that returns a list of phones and a responsive REACT APP with a home page that list phones and where you could select one phone to view more info about the phone. Alsot there should be a spinner or placeholder component while the REST API request is ongoing and the app is waiting for phones data.
