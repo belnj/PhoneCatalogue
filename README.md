@@ -13,7 +13,10 @@ This code challenge is to create a phone catalogue app from scratch. It Includes
 -	Testing rest api with mocha
 -	Dockerizing rest api
 
-### Instalación 🔧
+### Installation 🔧
 
-## Autores ✒️
+### How it was done
+
+
+## Authors ✒️
 * **Belén Jiménez García** - (https://github.com/belnj)
