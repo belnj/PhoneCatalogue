@@ -1,1 +1,2 @@
-# REACT API for Phone Catalogue
+# API for Phone Catalogue
+Node.js and express api
