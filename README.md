@@ -18,12 +18,16 @@ Install REST api then REACT app.
 First clone the repository in your computer or download it.
 
 REST api installation. 
-  option a. If you have docker installed follow these steps
+
+Copy the .env file that I send inside PhoneCatalogue_api. Make sure that when you paste it the file name is .env
+
+option a. If you have docker installed follow these steps
+
     - Create docker image `docker build -t <your username>/phonecatalogue-api .`
     - Run the image `docker run -p 4001:4001 -d <your username>/phonecatalogue-api`
 
-  option b. If you haven't docker installed follow these steps
-    - Copy the .env file that I send inside PhoneCatalogue_api. Make sure that when you paste it the file name is .env
+option b. If you haven't docker installed follow these steps
+
     - Open a terminal in PhoneCatalogue_api folder and type `npm install`
     - run `npm start`
 
