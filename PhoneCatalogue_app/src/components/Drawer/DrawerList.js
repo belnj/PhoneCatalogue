@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from "react-router-dom";
 
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -12,8 +12,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     link:{
         textDecoration: 'none',
-        color: '#000'
-    }
+        color: '#000',
+    },
 });
 
 export default function DrawerList() {

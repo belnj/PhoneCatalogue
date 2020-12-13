@@ -1,5 +1,5 @@
-import React from 'react'
-import DrawerList from './DrawerList'
+import React from 'react';
+import DrawerList from './DrawerList';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Drawer } from '@material-ui/core';
@@ -40,4 +40,4 @@ const MenuDrawer = (props) => {
     )
 }
 
-export default MenuDrawer
+export default MenuDrawer;

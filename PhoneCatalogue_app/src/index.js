@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //Theme from material-ui
-import {ThemeProvider} from '@material-ui/core/styles'
+import {ThemeProvider} from '@material-ui/core/styles';
 
 //Main Component
-import App from './components/App'
+import App from './components/App';
 
 // Import Global style configuration
-import theme from './themeConfig.js' 
+import theme from './themeConfig.js' ;
 
 
 ReactDOM.render(

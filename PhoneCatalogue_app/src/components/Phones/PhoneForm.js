@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     marginTop: theme.spacing(2)
-  }
+  },
 }));
 
 
@@ -48,19 +48,19 @@ export default function PhoneForm() {
     //new phone
     if(!params.id){
       await phoneService.postPhone(data);
-      history.goBack() //go to the catalogue
+      history.goBack(); //go to the catalogue
     }else{
       await phoneService.updatePhone(params.id,data);
-      history.goBack()
+      history.goBack();
     }
   }
 
-  const [phone, setPhone] = useState({}) //Get phone from back
+  const [phone, setPhone] = useState({}); //Get phone from back
   //query to get the phone and save it 
   const getPhone = async (id) => { 
     const res = await phoneService.getPhoneById(id);
     setPhone(res.data);
-    return res.data
+    return res.data;
   }
 
 useEffect(() => {
@@ -78,7 +78,7 @@ const validationSchema = Yup.object({
   ram: Yup.number('Must be a number').positive('Must be positive').integer(),
   screen: Yup.string(),
   processor: Yup.string(),
-  color: Yup.string()
+  color: Yup.string(),
 })
 
 const validationSchema2 = Yup.object({
@@ -89,7 +89,7 @@ const validationSchema2 = Yup.object({
   ram: Yup.number('Must be a number').positive('Must be positive').integer(),
   screen: Yup.string(),
   processor: Yup.string(),
-  color: Yup.string()
+  color: Yup.string(),
 })
 
 const initialvalues = params.id ? phone : {  
@@ -102,7 +102,7 @@ const initialvalues = params.id ? phone : {
   color: '',  
   price: 0,  
   imageFileName:'', 
-  imageUrl:'' 
+  imageUrl:'' ,
 }
 const formik = useFormik({
   initialValues: initialvalues ,
@@ -110,7 +110,7 @@ const formik = useFormik({
   enableReinitialize: true,
   onSubmit: (values) => {
     alert(JSON.stringify(values, null, 2));
-    onSubmitData(values)
+    onSubmitData(values);
   },
  
 });

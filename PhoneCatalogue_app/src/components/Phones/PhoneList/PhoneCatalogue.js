@@ -5,7 +5,7 @@ import PhoneItem from './PhoneItem';
 import PhoneHero from './PhoneHero';
 
 //Functions to call server
-import * as phoneServices from '../../../api/server'
+import * as phoneServices from '../../../api/server';
 
 //Material-ui
 import Grid from '@material-ui/core/Grid';
@@ -30,9 +30,9 @@ const useStyles = makeStyles((theme) => ({
 const PhoneList = () => {
   const classes = useStyles(); //css styles
 
-  const [phones, setPhones] = useState([]) //Phone list returned from api
-  const [loading, setLoading] = useState(true) //Loading phones 
-  const [loadingError, setLoadingError] = useState(false) //Error when try to load phones
+  const [phones, setPhones] = useState([]); //Phone list returned from api
+  const [loading, setLoading] = useState(true); //Loading phones 
+  const [loadingError, setLoadingError] = useState(false);//Error when try to load phones
   
   //query to get all phones and save them 
   const loadPhones = async () => { 
@@ -104,4 +104,4 @@ const PhoneList = () => {
   );
 }
 
-export default PhoneList
+export default PhoneList;

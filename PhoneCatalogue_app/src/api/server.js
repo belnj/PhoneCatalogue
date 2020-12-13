@@ -1,7 +1,7 @@
 //CRUD Phones API
 import axios from 'axios';
 
-const API = process.env.REACT_APP_API
+const API = process.env.REACT_APP_API;
 
 //query to get all phones 
 export const getPhones = async () => {   

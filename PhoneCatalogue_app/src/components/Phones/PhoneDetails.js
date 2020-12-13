@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import { useHistory, useParams } from "react-router-dom";
 
 //Functions to call api
-import * as phoneService from '../../api/server'
+import * as phoneService from '../../api/server';
 
 //Material-ui componentes
 import Grid from '@material-ui/core/Grid';
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '100%',
     backgroundSize: 'contain',
     margin: theme.spacing(3),
-  }
+  },
 }));
 
 export default function PhoneDetail(props) {
@@ -39,7 +39,7 @@ export default function PhoneDetail(props) {
   const history = useHistory();
   const params = useParams();
 
-  const [phone, setPhone] = useState({ _id:'', name:'', manufacturer: '', description: '', screen: '', processor: '', ram: null, color: '', price: null, imageFileName:''}) //Get phone from back
+  const [phone, setPhone] = useState({ _id:'', name:'', manufacturer: '', description: '', screen: '', processor: '', ram: null, color: '', price: null, imageFileName:''}); //Get phone from back
    
   //query to get the phone and save it 
   const getPhone = async (id) => { 

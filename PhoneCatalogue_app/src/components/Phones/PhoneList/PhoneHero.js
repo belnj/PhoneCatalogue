@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   link:{
     textDecoration: 'none'
-  }
+  },
 }));
 
 
@@ -48,4 +48,4 @@ const PhoneHero = () => {
   );
 }
 
-export default PhoneHero
+export default PhoneHero;

@@ -2,13 +2,13 @@ import React from 'react';
 import {  BrowserRouter,  Switch,  Route, Redirect } from "react-router-dom";
 
 //Components
-import NavBar from './Navbar/Navbar'
+import NavBar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
-import Drawer from './Drawer/Drawer'
+import Drawer from './Drawer/Drawer';
 import PhoneList from './Phones/PhoneList/PhoneCatalogue';
-import PhoneForm from './Phones/PhoneForm'
-import PhoneDetail from './Phones/PhoneDetails'
-import NotFound from './NotFound/NotFound'
+import PhoneForm from './Phones/PhoneForm';
+import PhoneDetail from './Phones/PhoneDetails';
+import NotFound from './NotFound/NotFound';
 
 //Material-ui
 import CssBaseline from '@material-ui/core/CssBaseline';

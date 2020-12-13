@@ -1,5 +1,5 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
 
 //Components from material-ui
 import Card from '@material-ui/core/Card';
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     flexGrow: 1,
-  }
+  },
 }));
 
 const PhoneItem = (props) => {
