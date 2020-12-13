@@ -3,7 +3,7 @@
 This is a phone catalogue developed with MERN Stack
 
 ## Description 🚀
-This code challenge is to create a phone catalogue app from scratch. All minimum requirements are done and it Includes these parts:
+This code challenge is to create a phone catalogue app from scratch. All minimum requirements are done and it includes these parts:
 
 -	Rest api (Node.js and express) 
 -	React app (React)
