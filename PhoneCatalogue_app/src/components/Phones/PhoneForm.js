@@ -6,7 +6,7 @@ import { useFormik, } from 'formik';
 //api queries
 import * as phoneService from "../../api/server";
 
-//material-ui
+//material-ui components
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
@@ -18,27 +18,27 @@ import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
-//styles
+//styles with material-ui
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(3),
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    marginTop: theme.spacing(3),
   },
   media: {
     height: 140,
   },
   submit: {
-    display:'flex'
+    display:'flex',
   },
   form: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
   },
 }));
 
 
-export default function PhoneForm() {
+const PhoneForm = () => {
   const classes = useStyles();
   const history = useHistory();
   const params = useParams();
@@ -108,11 +108,7 @@ const formik = useFormik({
   initialValues: initialvalues ,
   validationSchema: !params.id ? validationSchema: validationSchema2,
   enableReinitialize: true,
-  onSubmit: (values) => {
-    alert(JSON.stringify(values, null, 2));
-    onSubmitData(values);
-  },
- 
+  onSubmit: (values) => onSubmitData(values),
 });
 
 
@@ -253,8 +249,8 @@ const formik = useFormik({
               />
             </Grid>
           {!params.id ? 
-          <React.Fragment>
-          <Grid item xs={12} sm={6} >
+          <>
+            <Grid item xs={12} sm={6} >
               <TextField 
                 name="imageFileName" 
                 label="Image Name"
@@ -284,7 +280,7 @@ const formik = useFormik({
                 }}
               />
             </Grid>
-          </React.Fragment>
+          </>
           : ""
           }
               <Grid item xs={12} sm={12} align='right' >
@@ -298,3 +294,5 @@ const formik = useFormik({
     </Container>
   )
 }
+
+export default PhoneForm;

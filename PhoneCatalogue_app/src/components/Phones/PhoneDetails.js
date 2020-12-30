@@ -1,10 +1,11 @@
 import React, { useEffect, useState} from 'react';
 import { useHistory, useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 //Functions to call api
 import * as phoneService from '../../api/server';
 
-//Material-ui componentes
+//Material-ui components
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -14,7 +15,7 @@ import { Hidden } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-//Styles for material-ui components
+//styles with material-ui
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '80vh',
@@ -28,18 +29,19 @@ const useStyles = makeStyles((theme) => ({
     justifyContent:'flex-end',
   },
   image: {
-    paddingTop: '100%',
     backgroundSize: 'contain',
     margin: theme.spacing(3),
+    paddingTop: '100%',
   },
 }));
 
-export default function PhoneDetail(props) {
+const PhoneDetail = () => {
   const classes = useStyles();
   const history = useHistory();
   const params = useParams();
 
-  const [phone, setPhone] = useState({ _id:'', name:'', manufacturer: '', description: '', screen: '', processor: '', ram: null, color: '', price: null, imageFileName:''}); //Get phone from back
+  const [phone, setPhone] = useState({ _id:'', name:'', manufacturer: '', description: '', screen: '', 
+  processor: '', ram: null, color: '', price: null, imageFileName:''}); //Get phone from back
    
   //query to get the phone and save it 
   const getPhone = async (id) => { 
@@ -115,3 +117,5 @@ export default function PhoneDetail(props) {
     </Grid>
   );
 }
+
+export default PhoneDetail;

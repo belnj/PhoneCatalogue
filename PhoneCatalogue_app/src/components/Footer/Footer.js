@@ -1,4 +1,6 @@
 import React from 'react';
+
+//Material-ui components
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
@@ -6,7 +8,16 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Grid from '@material-ui/core/Grid';
 
-function Copyright() {
+//Styles with material-ui
+const useStyles = makeStyles((theme) => ({
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
+
+
+const Copyright = () => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © Belén Jiménez García - '}
@@ -16,19 +27,12 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-}));
 
-
-export default function Footer() {
+const Footer = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <> {/*ReactFragment*/}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
           Phone Catalogue
@@ -47,6 +51,8 @@ export default function Footer() {
         </Grid>
         <Copyright />
       </footer>
-    </React.Fragment>
+    </>
   );
 }
+
+export default Footer;

@@ -1,22 +1,24 @@
 import React from 'react';
+
+//Material-ui components
 import AppBar from '@material-ui/core/AppBar';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+//styles with material-ui
 const useStyles = makeStyles(theme => ({
   iconMenuButton: {
     marginRight: theme.spacing(2),
   },
   title:{
-      flexGrow: 1,
+    flexGrow: 1,
   },
 }));
 
 
-const NavBar = (props) => {
+const NavBar = ({handlerOpenDrawer}) => {
   const classes = useStyles();
 
   return (
@@ -26,7 +28,7 @@ const NavBar = (props) => {
             className={classes.iconMenuButton} 
             color="inherit"
             aria-label="open-drawer"
-            onClick={() => props.handlerOpenDrawer()}
+            onClick={handlerOpenDrawer}
           />
           <Typography variant="h6" color="inherit" noWrap>
             Phone Catalogue

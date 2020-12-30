@@ -14,11 +14,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-//Styles
+//styles with material-ui theme
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
-    paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
+    paddingTop: theme.spacing(8),
   },
   content: {
     backgroundColor: theme.palette.background.paper,
@@ -52,7 +52,7 @@ const PhoneList = () => {
   }, []);
 
   //Function to delete a phone when we click the delete button of an item in the list
-  async function deletePhone(id) {
+  const deletePhone = async (id) => {
     await phoneServices.deletePhone(id);
     loadPhones();
   }
@@ -80,27 +80,27 @@ const PhoneList = () => {
 
   //option 2: phones retrieved correctly
   return (
-    <React.Fragment>
-        {/* Hero unit */}
-        <PhoneHero />
-        {/* End Hero -> Phone List (2 options: There aren't phones yet, there are phones)*/}
-        {phones.length === 0 ?
-          <Typography component="h4" variant="h5" align="center" color="error" className={classes.content}>
-            There are no phones yet. Create a new one!
-          </Typography>
-        :
-          <Container className={classes.cardGrid} maxWidth="md">
-          <Grid container spacing={4}>
-            {phones.map((phone)=>(
-              <Grid item key={phone._id} xs={12} sm={6} md={4}>
-                <PhoneItem phone={phone} onClickDelete={() => deletePhone(phone._id)}/>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-        }
-        {/* End Phone List */}
-    </React.Fragment>
+    <>
+      {/* Hero unit */}
+      <PhoneHero />
+      {/* End Hero -> Phone List (2 options: There aren't phones yet, there are phones)*/}
+      {phones.length === 0 ?
+        <Typography component="h4" variant="h5" align="center" color="error" className={classes.content}>
+          There are no phones yet. Create a new one!
+        </Typography>
+      :
+        <Container className={classes.cardGrid} maxWidth="md">
+        <Grid container spacing={4}>
+          {phones.map((phone)=>(
+            <Grid item key={phone._id} xs={12} sm={6} md={4}>
+              <PhoneItem phone={phone} onClickDelete={() => deletePhone(phone._id)}/>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+      }
+      {/* End Phone List */}
+    </>
   );
 }
 

@@ -1,17 +1,19 @@
 import React from 'react';
+
 import DrawerList from './DrawerList';
 
+//Material-ui components
 import { makeStyles } from '@material-ui/core/styles';
 import { Drawer } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 
-
 const drawerWidth = 240;
 
+//Styles with material-ui
 const useStyles = makeStyles(theme => ({
     drawer: {
-        width: drawerWidth,
         flexShrink: 0,
+        width: drawerWidth,
     },
     drawerPaper: {
         width: drawerWidth,
@@ -20,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const MenuDrawer = (props) => {
+const MenuDrawer = ({variant, open, onClose}) => {
     const classes = useStyles();
 
     return (
@@ -28,10 +30,10 @@ const MenuDrawer = (props) => {
             className={classes.drawer}
             classes={{paper: classes.drawerPaper,}}
             anchor="left"
-            variant={props.variant}
-            open={props.open}
-            onClose={props.onClose ? props.onClose : null}
-            onClick={props.onClose}
+            variant={variant}
+            open={open}
+            onClose={onClose ? onClose : null}
+            onClick={onClose}
         >
             <div className={classes.toolbar}></div>
             <Divider />

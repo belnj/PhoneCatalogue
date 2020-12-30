@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
+//Material-ui components
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PhoneIcon from '@material-ui/icons/PhoneAndroid';
 import List from '@material-ui/core/List';
@@ -9,14 +10,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 
+//Styles with material-ui
 const useStyles = makeStyles({
     link:{
-        textDecoration: 'none',
         color: '#000',
+        textDecoration: 'none',
     },
 });
 
-export default function DrawerList() {
+const DrawerList = () => {
     
     const classes = useStyles();
 
@@ -41,3 +43,5 @@ export default function DrawerList() {
         </List>
     )
 }
+
+export default DrawerList;

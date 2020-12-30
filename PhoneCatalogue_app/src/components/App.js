@@ -1,3 +1,14 @@
+/* Main component 
+1. Render common components to all screens (NavBar, Drawer, Footer)
+2. Functionality required to open and close Drawer component
+3. React Router components to routing dynamically. Set app routes and the component that each one renders.
+   Url -> Component           /PhoneCatalogue or /  ->  PhoneList
+                              /PhoneDetail/:id      ->  PhoneDetail
+                              /UpdatePhone/:id      ->  PhoneForm
+                              /NewPhone             ->  PhoneForm
+                              other route           ->  NotFound
+*/
+
 import React from 'react';
 import {  BrowserRouter,  Switch,  Route, Redirect } from "react-router-dom";
 
@@ -10,13 +21,15 @@ import PhoneForm from './Phones/PhoneForm';
 import PhoneDetail from './Phones/PhoneDetails';
 import NotFound from './NotFound/NotFound';
 
-//Material-ui
+//Material-ui components
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 
-
-//styles 
+//styles with material-ui
 const useStyles = makeStyles(theme => ({
+  main:{
+    backgroundColor: 'white',
+  },
   toolbar: theme.mixins.toolbar, // necessary for content to be below app bar
   content: {
     flexGrow: 1,
@@ -24,16 +37,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function App() {
+ const App = () => {
     const classes = useStyles();
 
     //State for open or close the drawer
     const [openDrawer, setOpenDrawer] = React.useState(false);
     //Change the state of the drawer (open or close)
-    const handlerOpenDrawer = () => {
-        setOpenDrawer(!openDrawer);
-    };
-
+    const handlerOpenDrawer = () => setOpenDrawer(!openDrawer);  
 
   return (
     <BrowserRouter>
@@ -42,7 +52,7 @@ export default function App() {
         <NavBar handlerOpenDrawer={handlerOpenDrawer}/>
         <Drawer variant="temporary" open={openDrawer} onClose={handlerOpenDrawer} onClick={handlerOpenDrawer}/>
         {/*main*/}  
-        <main>
+        <main className={classes.main}>
           <div className={classes.toolbar}></div>
             <Switch>
               <Route path="/PhoneCatalogue" component={PhoneList} />
@@ -57,8 +67,8 @@ export default function App() {
         </main>  
         {/*footer*/}
         <Footer />      
-    </BrowserRouter>
-    
+    </BrowserRouter> 
   );
 }
 
+export default App;
